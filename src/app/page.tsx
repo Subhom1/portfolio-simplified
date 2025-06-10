@@ -70,7 +70,7 @@ export default function Home() {
           </Button>
           <Button
             variant="outlined"
-            href="https://linkedin.com/in/yourlinkedin"
+            href="https://linkedin.com/in/subhom"
             target="_blank"
             sx={{
               transition: "all 0.3s",
