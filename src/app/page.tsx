@@ -18,9 +18,9 @@ export default function Home() {
           className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          Hey there 👋 I&apos;m Subhom
+          Hey there 👋 <br />I&apos;m Subhom
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl text-gray-600 hover:text-gray-800 transition-colors duration-300"
@@ -32,10 +32,10 @@ export default function Home() {
           Enthusiast
         </motion.p>
         <motion.h3
-          className="my-10 text-sm md:text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 text-left md:text-center px-5"
+          className="my-8 text-sm md:text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 text-left md:text-center px-5"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.7 }}
         >
           Based in Ireland, with 4+ years of experience in web development.
           <br />
