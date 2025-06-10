@@ -9,8 +9,6 @@ export default function Home() {
       style={{
         backdropFilter: "blur(16px)",
         background: "rgba(255, 255, 255, 0.5)",
-        borderRadius: "0px",
-        // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
         height: "100vh",
         width: "100vw",
       }}
@@ -22,7 +20,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Hi, I&apos;m Subhom
+          Hey there 👋 I&apos;m Subhom
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl text-gray-600 hover:text-gray-800 transition-colors duration-300"
