@@ -1,5 +1,5 @@
 {
-  "name": "my-site",
+  "name": "subhom-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
+    "class-variance-authority": "^0.7.1",
+    "framer-motion": "^12.9.7",
+    "lucide-react": "^0.507.0",
+    "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.14"
+    "tailwind-variants": "^1.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.14"
+    "typescript": "^5"
   }
 }
