@@ -15,7 +15,7 @@ export default function Home() {
     >
       <section className="max-w-3xl mx-auto text-center py-16">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-4 hover:text-blue-600 transition-colors duration-300"
+          className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
