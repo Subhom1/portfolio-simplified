@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Button from "@mui/material/Button";
+import { LinkButton } from "./components/LinkButton";
 
 export default function Home() {
   return (
@@ -15,12 +15,13 @@ export default function Home() {
     >
       <section className="max-w-3xl mx-auto text-center py-16">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 text-gray-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hey there 👋 <br />I&apos;m Subhom
+          Hey there 👋 <br />
+          I&apos;m Subhom
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl text-gray-600 hover:text-gray-800 transition-colors duration-300"
@@ -49,40 +50,25 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <Button
-            variant="outlined"
-            href="https://github.com/Subhom1"
-            target="_blank"
-            sx={{
-              transition: "all 0.3s",
-              borderColor: "#1f2937",
-              color: "#1f2937",
-              "&:hover": {
-                backgroundColor: "#1f2937",
-                color: "#fff",
-                borderColor: "#1f2937",
-              },
-            }}
-          >
-            GitHub
-          </Button>
-          <Button
-            variant="outlined"
-            href="https://linkedin.com/in/subhom"
-            target="_blank"
-            sx={{
-              transition: "all 0.3s",
-              color: "#0077B5",
-              borderColor: "#0077B5",
-              "&:hover": { backgroundColor: "#0077B5", color: "#fff" },
-            }}
-          >
-            LinkedIn
-          </Button>
+          <LinkButton
+            link="https://github.com/Subhom1"
+            content="Github"
+            color="#1f2937"
+          />
+          <LinkButton
+            link="https://linkedin.com/in/subhom"
+            content="LinkedIn"
+            color="#0077B5"
+          />
+          <LinkButton
+            link="https://drive.google.com/file/d/1eKUtcgKR_EJ2gxDIxFhwARuH9LBQWtwS/view?usp=sharing"
+            content="View My CV"
+            color="#166534"
+          />
         </motion.div>
 
         <motion.div
-          className="grid gap-6 md:grid-cols-2"
+          className="flex justify-center"
           initial="hidden"
           animate="visible"
           variants={{
