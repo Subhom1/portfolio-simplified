@@ -61,7 +61,7 @@ export default function Home() {
             color="#0077B5"
           />
           <LinkButton
-            link="https://drive.google.com/file/d/13t_4UQ5L0x8usKrFxs9EjL1yX2IbV7QA/view"
+            link="https://drive.google.com/file/d/1QxajNpRSSxTzmLMXusDjt_iswCG-2S33/view"
             content="View My CV"
             color="#166534"
           />
