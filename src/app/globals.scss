@@ -1,0 +1,24 @@
+@import "@carbon/styles/css/styles.css";
+
+body {
+  background-color: var(--cds-background);
+  color: var(--cds-text-primary);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
+}
+
+/* On small screens, we might need to wrap or scale down */
+@media (max-width: 672px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

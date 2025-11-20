@@ -1,86 +1,116 @@
 "use client";
-import { motion } from "framer-motion";
-import { LinkButton } from "./components/LinkButton";
-
+import { Button, Column, Grid } from "@carbon/react";
+import {
+  LogoGithub,
+  LogoLinkedin,
+  DocumentDownload,
+} from "@carbon/icons-react";
+import Image from "next/image";
+import ProfilePicture from "/public/static/media/profile-pic.png";
 export default function Home() {
   return (
     <main
-      className="flex items-center justify-center p-3 "
       style={{
-        backdropFilter: "blur(16px)",
-        background: "rgba(255, 255, 255, 0.5)",
-        height: "100vh",
-        width: "100vw",
+        minHeight: "100vh",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        paddingTop: "2rem",
+        paddingBottom: "2rem",
+        margin: "0 auto",
+        maxWidth: "1200px",
       }}
     >
-      <section className="max-w-3xl mx-auto text-center py-16">
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-4 text-gray-600"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+      <Grid>
+        <Column
+          lg={{ span: 16, offset: 1 }}
+          md={8}
+          sm={4}
+          className="cds--type-center"
         >
-          Hey there 👋 <br />
-          I&apos;m Subhom
-        </motion.h1>
-        <motion.p
-          className="text-lg md:text-xl text-gray-600 hover:text-gray-800 transition-colors duration-300"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          Frontend / Full-Stack Developer | React | NextJs | TypeScript | MongoDB | UI/UX
-          Enthusiast
-        </motion.p>
-        <motion.h3
-          className="my-8 text-sm md:text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 text-left md:text-center px-5"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-        >
-          Based in Ireland, with 4+ years of experience in web development.
-          <br />
-          Passionate about building user-friendly and efficient web
-          applications.
-        </motion.h3>
+          <div
+            className="header-container"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "clamp(1rem, 3vw, 2rem)",
+              justifyContent: "start",
+              width: "100%",
+              flexWrap: "wrap",
+            }}
+          >
+            <h1
+              className="cds--display-04"
+              style={{
+                textAlign: "left",
+              }}
+            >
+              Hey there 👋 <br />
+              I&apos;m Subhom
+            </h1>
 
-        <motion.div
-          className="flex justify-center gap-4 mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <LinkButton
-            link="https://github.com/Subhom1"
-            content="Github"
-            color="#1f2937"
-          />
-          <LinkButton
-            link="https://linkedin.com/in/subhom"
-            content="LinkedIn"
-            color="#0077B5"
-          />
-          <LinkButton
-            link="https://drive.google.com/file/d/1QxajNpRSSxTzmLMXusDjt_iswCG-2S33/view"
-            content="View My CV"
-            color="#166534"
-          />
-        </motion.div>
+            <div
+              style={{
+                width: "clamp(100px, 20vw, 150px)",
+                height: "clamp(100px, 20vw, 150px)",
+                borderRadius: "clamp(25px, 5vw, 40px)",
+                overflow: "hidden",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Image
+                src={ProfilePicture}
+                alt="Profile Picture"
+                fill
+                style={{
+                  objectFit: "cover",
+                  transform: "scale(1.8)",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+          </div>
 
-        <motion.div
-          className="flex justify-center"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-        ></motion.div>
-      </section>
+          <h3 className="cds--body-02" style={{ marginBottom: "2rem" }}>
+            Frontend / Full-Stack Developer | React | NextJs | TypeScript |
+            Python | MongoDB | UI/UX Enthusiast
+          </h3>
+          <p className="cds--body-01" style={{ marginBottom: "3rem" }}>
+            Based in Ireland, with 4+ years of experience in web development.
+            <br />
+            Providing full-stack solutions to businesses and individuals by
+            building user-friendly and efficient web applications.
+          </p>
+
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <Button
+              href="https://github.com/Subhom1"
+              target="_blank"
+              renderIcon={LogoGithub}
+              kind="primary"
+            >
+              Github
+            </Button>
+            <Button
+              href="https://linkedin.com/in/subhom"
+              target="_blank"
+              renderIcon={LogoLinkedin}
+              kind="secondary"
+            >
+              LinkedIn
+            </Button>
+            <Button
+              href="https://drive.google.com/file/d/1QxajNpRSSxTzmLMXusDjt_iswCG-2S33/view"
+              target="_blank"
+              renderIcon={DocumentDownload}
+              kind="tertiary"
+            >
+              View My CV
+            </Button>
+          </div>
+        </Column>
+      </Grid>
     </main>
   );
 }
