@@ -101,7 +101,7 @@ export default function Home() {
               LinkedIn
             </Button>
             <Button
-              href="https://drive.google.com/file/d/1QxajNpRSSxTzmLMXusDjt_iswCG-2S33/view"
+              href="https://drive.google.com/file/d/1mm9apzLtziNOyJeqPoY6A3z3G6oWLtNn/view"
               target="_blank"
               renderIcon={DocumentDownload}
               kind="tertiary"
