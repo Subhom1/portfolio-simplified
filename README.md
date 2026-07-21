@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Subhom Kundu — Portfolio
 
-## Getting Started
+A mobile-first portfolio for a Senior Full Stack Engineer specialising in React, TypeScript, accessible UI, and scalable product engineering.
 
-First, run the development server:
+## What changed
+
+- Rebuilt the full site around real CV content and outcome-led case studies.
+- Added a responsive editorial layout for mobile, tablet, and desktop.
+- Added persistent light and dark themes with system preference detection.
+- Added verified IBM Carbon Design System contribution statistics and selected PRs.
+- Added experience, skills, education, certifications, fragrance interests, Instagram, and contact sections.
+- Replaced the old profile image with a background-free portrait.
+- Replaced the remote CV URL with the current PDF served directly by the site.
+- Added metadata, canonical URLs, Open Graph data, and Person structured data.
+- Added reduced-motion support, keyboard focus states, semantic landmarks, and a skip link.
+- Removed unused UI and animation libraries to keep the client bundle small.
+
+## Stack
+
+- Next.js 14 App Router
+- React 18
+- TypeScript
+- SCSS
+- Sharp image optimisation
+- Local Geist variable fonts
+
+The initial experience uses native CSS motion instead of a runtime animation or 3D library. This keeps the homepage statically generated and limits the first-load JavaScript while leaving room for selectively loaded experiments later.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verify
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+Responsive QA targets:
 
-To learn more about Next.js, take a look at the following resources:
+- Mobile: 390 × 844
+- Tablet: 768 × 1024
+- Desktop: 1440 × 900
+- Light and dark themes
+- `prefers-reduced-motion: reduce`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+public/
+├── Subhom_Kundu_Senior_Full_Stack_Engineer.pdf
+└── static/media/profile-pic.png
+src/app/
+├── fonts/
+├── globals.scss
+├── layout.tsx
+└── page.tsx
+```
 
-## Deploy on Vercel
+## Possible motion experiments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+These ideas should be loaded only where they add meaning:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Use GSAP ScrollTrigger for a pinned project index and subtle section transitions. Dynamically import it after the first interaction and disable it for reduced-motion users.
+2. Use React Three Fiber for one lightweight fragrance-bottle object in the personal section. Render a static fallback on mobile and load the canvas only when it approaches the viewport.
+3. Add a pointer-reactive gradient behind the portrait with CSS custom properties before considering a shader.
+4. Add an auto-updating Carbon contribution count with a cached server request or incremental revalidation.
+5. Create a custom social preview image so shared links carry the same visual identity as the portfolio.
+
+The design principle is simple: one memorable interaction is stronger than animation everywhere.
