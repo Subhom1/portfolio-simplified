@@ -438,7 +438,7 @@ export default function Home() {
               </p>
               <h1 className="reveal reveal-2">
                 I build systems people trust
-                <span className="hero-accent">—and interfaces they enjoy.</span>
+                <span className="hero-accent">and interfaces they enjoy.</span>
               </h1>
               <p className="hero-intro reveal reveal-3">
                 I&apos;m Subhom, a React and TypeScript engineer in Dublin. I turn complex product requirements into fast, accessible, and thoughtfully crafted digital experiences.
