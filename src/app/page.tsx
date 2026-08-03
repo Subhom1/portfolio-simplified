@@ -77,7 +77,7 @@ const experiences = [
     summary:
       "Contributing production fixes, accessibility improvements, tests, and component enhancements to IBM’s enterprise design system while leading full-stack delivery for client products.",
     highlights: [
-      "35 authored Carbon pull requests spanning React, Web Components, Sass, testing, and WCAG.",
+      "Authored Carbon pull requests spanning React, Web Components, Sass, testing, and WCAG.",
       "Leading Essence Isle with Next.js, TypeScript, NestJS, Supabase, reusable UI patterns, and scalable APIs.",
     ],
   },
@@ -163,32 +163,108 @@ const projects = [
   },
 ];
 
-const carbonPullRequests = [
+type CarbonPullRequest = {
+  createdAt: string;
+  href: string;
+  labels: string[];
+  number: number;
+  state: "open" | "closed" | "merged";
+  title: string;
+  updatedAt: string;
+};
+
+type CarbonPullRequestData = {
+  pullRequests: CarbonPullRequest[];
+  stats: {
+    authored: number;
+    merged: number;
+    open: number;
+  };
+  updatedAt: string;
+};
+
+const fallbackCarbonPullRequests: CarbonPullRequest[] = [
   {
-    number: "#22465",
-    title: "Connected radio helper text to its fieldset",
-    area: "Accessibility · Web Components",
-    href: "https://github.com/carbon-design-system/carbon/pull/22465",
+    createdAt: "2026-08-02T10:45:41Z",
+    number: 22865,
+    title: "fix(NumberInput): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22865",
+    state: "open",
+    updatedAt: "2026-08-02T11:00:12Z",
   },
   {
-    number: "#22488",
-    title: "Added accessible labels to notification status icons",
-    area: "Accessibility · React",
-    href: "https://github.com/carbon-design-system/carbon/pull/22488",
+    createdAt: "2026-08-02T10:26:18Z",
+    number: 22864,
+    title: "fix(Notifications): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22864",
+    state: "open",
+    updatedAt: "2026-08-02T10:42:24Z",
   },
   {
-    number: "#22474",
-    title: "Simplified pagination DOM references with Lit decorators",
-    area: "Architecture · Web Components",
-    href: "https://github.com/carbon-design-system/carbon/pull/22474",
+    createdAt: "2026-08-02T01:48:17Z",
+    number: 22863,
+    title: "fix(MenuButton): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22863",
+    state: "open",
+    updatedAt: "2026-08-02T02:06:53Z",
   },
   {
-    number: "#21145",
-    title: "Corrected multi-select sizing across component hosts",
-    area: "UI quality · Sass",
-    href: "https://github.com/carbon-design-system/carbon/pull/21145",
+    createdAt: "2026-08-02T01:22:44Z",
+    number: 22862,
+    title: "fix(Loading): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22862",
+    state: "open",
+    updatedAt: "2026-08-02T01:37:48Z",
+  },
+  {
+    createdAt: "2026-08-02T01:19:32Z",
+    number: 22861,
+    title: "fix(Layer): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22861",
+    state: "open",
+    updatedAt: "2026-08-02T01:34:39Z",
+  },
+  {
+    createdAt: "2026-08-02T01:09:14Z",
+    number: 22860,
+    title: "fix(IdPrefix): add Storybook controls",
+    labels: [],
+    href: "https://github.com/carbon-design-system/carbon/pull/22860",
+    state: "open",
+    updatedAt: "2026-08-02T01:24:31Z",
   },
 ];
+
+const fallbackCarbonData: CarbonPullRequestData = {
+  pullRequests: fallbackCarbonPullRequests,
+  stats: {
+    authored: 78,
+    merged: 27,
+    open: 48,
+  },
+  updatedAt: "2026-08-03T11:23:26Z",
+};
+
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("en-IE", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(date));
+
+const formatDateTime = (date: string) =>
+  new Intl.DateTimeFormat("en-IE", {
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(date));
 
 const skillGroups = [
   {
@@ -237,10 +313,50 @@ const personSchema = {
 export default function Home() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [carbonData, setCarbonData] =
+    useState<CarbonPullRequestData>(fallbackCarbonData);
+  const [githubStatus, setGithubStatus] = useState<
+    "loading" | "live" | "unavailable"
+  >("loading");
 
   useEffect(() => {
     const activeTheme = document.documentElement.dataset.theme;
     setTheme(activeTheme === "light" ? "light" : "dark");
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadCarbonPullRequests = async () => {
+      try {
+        const response = await fetch("/api/github/pulls");
+
+        if (!response.ok) {
+          throw new Error(`GitHub API route returned ${response.status}`);
+        }
+
+        const data = (await response.json()) as CarbonPullRequestData;
+
+        if (active) {
+          setCarbonData(data);
+          setGithubStatus("live");
+        }
+      } catch (error) {
+        console.error("Unable to refresh Carbon pull requests", error);
+
+        if (active) {
+          setGithubStatus("unavailable");
+        }
+      }
+    };
+
+    loadCarbonPullRequests();
+    const refreshTimer = window.setInterval(loadCarbonPullRequests, 300_000);
+
+    return () => {
+      active = false;
+      window.clearInterval(refreshTimer);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -375,7 +491,7 @@ export default function Home() {
               <span>Years building for the web</span>
             </div>
             <div>
-              <strong>35</strong>
+              <strong>{carbonData.stats.authored}</strong>
               <span>Carbon pull requests authored</span>
             </div>
             <div>
@@ -452,21 +568,21 @@ export default function Home() {
 
             <div className="carbon-stats" aria-label="Carbon contribution statistics">
               <div>
-                <strong>35</strong>
+                <strong>{carbonData.stats.authored}</strong>
                 <span>Authored</span>
               </div>
               <div>
-                <strong>13</strong>
+                <strong>{carbonData.stats.merged}</strong>
                 <span>Merged</span>
               </div>
               <div>
-                <strong>21</strong>
+                <strong>{carbonData.stats.open}</strong>
                 <span>Open</span>
               </div>
             </div>
 
             <div className="pr-list">
-              {carbonPullRequests.map((pullRequest) => (
+              {carbonData.pullRequests.map((pullRequest) => (
                 <a
                   className="pr-card"
                   href={pullRequest.href}
@@ -474,16 +590,31 @@ export default function Home() {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <span className="pr-number">{pullRequest.number}</span>
+                  <span className="pr-number">#{pullRequest.number}</span>
                   <span className="pr-copy">
                     <strong>{pullRequest.title}</strong>
-                    <small>{pullRequest.area}</small>
+                    <small>
+                      <span className={`pr-state pr-state-${pullRequest.state}`}>
+                        {pullRequest.state}
+                      </span>
+                      {pullRequest.labels.length > 0 && (
+                        <span>{pullRequest.labels.join(" · ")}</span>
+                      )}
+                      <span>Updated {formatDate(pullRequest.updatedAt)}</span>
+                    </small>
                   </span>
                   <ArrowUpRight />
                 </a>
               ))}
             </div>
-            <p className="snapshot-note">Public GitHub snapshot · 16 July 2026</p>
+            <p aria-live="polite" className={`snapshot-note snapshot-${githubStatus}`}>
+              <span aria-hidden="true" className="github-status-dot" />
+              {githubStatus === "loading" && "Connecting to GitHub…"}
+              {githubStatus === "live" &&
+                `Live GitHub data · refreshed ${formatDateTime(carbonData.updatedAt)}`}
+              {githubStatus === "unavailable" &&
+                `GitHub unavailable · showing the ${formatDate(carbonData.updatedAt)} snapshot`}
+            </p>
           </div>
         </section>
 

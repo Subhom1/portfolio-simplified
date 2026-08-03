@@ -15,6 +15,9 @@
   --coral: #ff7468;
   --blue: #77a7ff;
   --violet: #bb8cff;
+  --pr-open: #198038;
+  --pr-merged: #6929c4;
+  --pr-closed: #da1e28;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
   --header: rgba(9, 10, 12, 0.82);
   --max-width: 80rem;
@@ -38,6 +41,9 @@
   --coral: #e94e44;
   --blue: #386fd9;
   --violet: #8250c9;
+  --pr-open: #42be65;
+  --pr-merged: #be95ff;
+  --pr-closed: #ff8389;
   --shadow: 0 24px 80px rgba(29, 32, 37, 0.12);
   --header: rgba(244, 242, 235, 0.84);
   color-scheme: light;
@@ -724,16 +730,72 @@ button {
 }
 
 .pr-copy small {
+  align-items: center;
   color: color-mix(in srgb, var(--text-inverse) 52%, transparent);
+  display: flex;
+  flex-wrap: wrap;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.61rem;
+  gap: 0.45rem 0.65rem;
+}
+
+.pr-copy small > span + span::before {
+  content: "·";
+  margin-right: 0.65rem;
+}
+
+.pr-state {
+  color: var(--text-inverse);
+  text-transform: capitalize;
+}
+
+.pr-state-merged {
+  color: var(--pr-merged);
+}
+
+.pr-state-open {
+  color: var(--pr-open);
+}
+
+.pr-state-closed {
+  color: var(--pr-closed);
+}
+
+.pr-state::before {
+  background: currentColor;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 0.35rem;
+  margin-right: 0.35rem;
+  width: 0.35rem;
 }
 
 .snapshot-note {
+  align-items: center;
+  display: flex;
+  gap: 0.45rem;
+  justify-content: flex-end;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.6rem;
   margin-top: 1rem;
   text-align: right;
+}
+
+.github-status-dot {
+  background: currentColor;
+  border-radius: 50%;
+  height: 0.38rem;
+  width: 0.38rem;
+}
+
+.snapshot-live .github-status-dot {
+  background: var(--pr-open);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pr-open) 20%, transparent);
+}
+
+.snapshot-loading .github-status-dot {
+  animation: status-pulse 1.2s ease-in-out infinite;
 }
 
 .timeline {
