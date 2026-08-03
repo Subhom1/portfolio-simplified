@@ -67,7 +67,9 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 button,
@@ -172,7 +174,10 @@ button {
   display: inline-flex;
   height: 2.5rem;
   justify-content: center;
-  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
   width: 2.5rem;
 }
 
@@ -197,7 +202,10 @@ button {
   overflow: hidden;
   padding-inline: 1rem;
   pointer-events: none;
-  transition: grid-template-rows 220ms ease, opacity 180ms ease, padding-bottom 220ms ease;
+  transition:
+    grid-template-rows 220ms ease,
+    opacity 180ms ease,
+    padding-bottom 220ms ease;
 }
 
 .mobile-navigation.is-open {
@@ -244,7 +252,8 @@ button {
 }
 
 .hero-grid-lines {
-  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 4rem 4rem;
   inset: 0 1.25rem auto;
@@ -285,7 +294,7 @@ button {
 }
 
 .eyebrow span:first-child {
-  color: var(--accent);
+  color: #6f9700
 }
 
 .hero h1 {
@@ -326,7 +335,11 @@ button {
   justify-content: space-between;
   min-height: 3.35rem;
   padding: 0.9rem 1rem;
-  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .button:hover {
@@ -393,7 +406,11 @@ button {
 }
 
 .portrait-halo {
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 70%, transparent), transparent 66%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 70%, transparent),
+    transparent 66%
+  );
   filter: blur(12px);
   height: 76%;
   left: 50%;
@@ -530,7 +547,9 @@ button {
   overflow: hidden;
   padding: 1.25rem;
   position: relative;
-  transition: border-color 180ms ease, transform 180ms ease;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .project-card::after {
@@ -543,7 +562,9 @@ button {
   position: absolute;
   right: -2rem;
   top: -2rem;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
   width: 7rem;
 }
 
@@ -653,7 +674,8 @@ button {
 }
 
 .carbon-intro .text-link {
-  border-bottom: 1px solid color-mix(in srgb, var(--text-inverse) 35%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--text-inverse) 35%, transparent);
   margin-top: 1.5rem;
   padding-bottom: 0.3rem;
 }
@@ -663,7 +685,8 @@ button {
 }
 
 .carbon-stats {
-  border-bottom: 1px solid color-mix(in srgb, var(--text-inverse) 20%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--text-inverse) 20%, transparent);
   border-top: 1px solid color-mix(in srgb, var(--text-inverse) 20%, transparent);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -677,7 +700,8 @@ button {
 }
 
 .carbon-stats div + div {
-  border-left: 1px solid color-mix(in srgb, var(--text-inverse) 20%, transparent);
+  border-left: 1px solid
+    color-mix(in srgb, var(--text-inverse) 20%, transparent);
 }
 
 .carbon-stats strong {
@@ -697,12 +721,15 @@ button {
 
 .pr-card {
   align-items: flex-start;
-  border-bottom: 1px solid color-mix(in srgb, var(--text-inverse) 20%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--text-inverse) 20%, transparent);
   display: grid;
   gap: 0.75rem;
   grid-template-columns: auto 1fr auto;
   padding: 1rem 0;
-  transition: color 160ms ease, padding 160ms ease;
+  transition:
+    color 160ms ease,
+    padding 160ms ease;
 }
 
 .pr-card:hover {
@@ -960,7 +987,11 @@ button {
 }
 
 .scent-card {
-  background: linear-gradient(145deg, color-mix(in srgb, var(--coral) 24%, var(--page-elevated)), var(--page-elevated) 70%);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--coral) 24%, var(--page-elevated)),
+    var(--page-elevated) 70%
+  );
   display: flex;
   flex-direction: column;
   min-height: 27rem;
@@ -987,7 +1018,11 @@ button {
 
 .scent-bottle {
   align-items: center;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--coral) 15%, transparent), color-mix(in srgb, var(--coral) 72%, var(--page)));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--coral) 15%, transparent),
+    color-mix(in srgb, var(--coral) 72%, var(--page))
+  );
   border: 1px solid color-mix(in srgb, var(--text) 50%, transparent);
   border-radius: 1.9rem 1.9rem 0.65rem 0.65rem;
   bottom: 1.4rem;
@@ -1100,7 +1135,8 @@ button {
 
 .contact-email {
   align-items: center;
-  border-bottom: 1px solid color-mix(in srgb, var(--accent-ink) 38%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--accent-ink) 38%, transparent);
   display: flex;
   font-size: clamp(1rem, 4.7vw, 2rem);
   font-weight: 650;
