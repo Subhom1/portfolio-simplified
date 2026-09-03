@@ -16,7 +16,13 @@ const ArrowUpRight = ({ size = 18 }: IconProps) => (
     viewBox="0 0 24 24"
     width={size}
   >
-    <path d="M7 17 17 7M8 7h9v9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
+    <path
+      d="M7 17 17 7M8 7h9v9"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
   </svg>
 );
 
@@ -28,7 +34,13 @@ const Download = ({ size = 18 }: IconProps) => (
     viewBox="0 0 24 24"
     width={size}
   >
-    <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
+    <path
+      d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
   </svg>
 );
 
@@ -41,7 +53,12 @@ const Sun = ({ size = 18 }: IconProps) => (
     width={size}
   >
     <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
+    <path
+      d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth="1.7"
+    />
   </svg>
 );
 
@@ -53,19 +70,47 @@ const Moon = ({ size = 18 }: IconProps) => (
     viewBox="0 0 24 24"
     width={size}
   >
-    <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+    <path
+      d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.7"
+    />
   </svg>
 );
 
 const Menu = ({ size = 18 }: IconProps) => (
-  <svg aria-hidden="true" fill="none" height={size} viewBox="0 0 24 24" width={size}>
-    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+  <svg
+    aria-hidden="true"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+  >
+    <path
+      d="M4 7h16M4 12h16M4 17h16"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth="1.8"
+    />
   </svg>
 );
 
 const Close = ({ size = 18 }: IconProps) => (
-  <svg aria-hidden="true" fill="none" height={size} viewBox="0 0 24 24" width={size}>
-    <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+  <svg
+    aria-hidden="true"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+  >
+    <path
+      d="m6 6 12 12M18 6 6 18"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth="1.8"
+    />
   </svg>
 );
 
@@ -269,19 +314,48 @@ const formatDateTime = (date: string) =>
 const skillGroups = [
   {
     title: "Frontend architecture",
-    skills: ["React", "Angular", "Next.js", "TypeScript", "Design systems", "Storybook"],
+    skills: [
+      "React",
+      "Angular",
+      "Next.js",
+      "TypeScript",
+      "Design systems",
+      "Storybook",
+    ],
   },
   {
     title: "State & data",
-    skills: ["Redux Toolkit", "Redux Saga", "Zustand", "React Query", "GraphQL", "REST APIs"],
+    skills: [
+      "Redux Toolkit",
+      "Redux Saga",
+      "Zustand",
+      "React Query",
+      "GraphQL",
+      "REST APIs",
+    ],
   },
   {
     title: "Quality & accessibility",
-    skills: ["WCAG", "Jest", "Testing Library", "Cypress", "Playwright", "Vitest"],
+    skills: [
+      "WCAG",
+      "Jest",
+      "Testing Library",
+      "Cypress",
+      "Playwright",
+      "Vitest",
+    ],
   },
   {
     title: "Backend & cloud",
-    skills: ["Node.js", "NestJS", "Express", "MongoDB", "Supabase", "AWS", "GCP"],
+    skills: [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "MongoDB",
+      "Supabase",
+      "AWS",
+      "GCP",
+    ],
   },
 ];
 
@@ -470,7 +544,7 @@ export default function Home() {
                 </a>
                 <a
                   className="button button-secondary"
-                  href="/Subhom_Senior_Fullstack_Developer_Ltd.pdf"
+                  href="/Subhom_Senior_Fullstack_Developer_Lt.pdf"
                   target="_blank"
                 >
                   Read my CV
