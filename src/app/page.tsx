@@ -409,18 +409,36 @@ export default function Home() {
             >
               {menuOpen ? <Close /> : <Menu />}
             </button>
-            <a aria-label="Email Subhom" className="nav-contact" href="mailto:subhomkundu@gmail.com">
+            <a
+              aria-label="Email Subhom"
+              className="nav-contact"
+              href="mailto:subhomkundu@gmail.com"
+            >
               Let&apos;s talk
               <ArrowUpRight />
             </a>
           </div>
         </nav>
-        <div className={`mobile-navigation${menuOpen ? " is-open" : ""}`} id="mobile-navigation">
-          <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
-          <a href="#open-source" onClick={() => setMenuOpen(false)}>Open source</a>
-          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="mailto:subhomkundu@gmail.com" onClick={() => setMenuOpen(false)}>
+        <div
+          className={`mobile-navigation${menuOpen ? " is-open" : ""}`}
+          id="mobile-navigation"
+        >
+          <a href="#work" onClick={() => setMenuOpen(false)}>
+            Work
+          </a>
+          <a href="#open-source" onClick={() => setMenuOpen(false)}>
+            Open source
+          </a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>
+            Experience
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+          <a
+            href="mailto:subhomkundu@gmail.com"
+            onClick={() => setMenuOpen(false)}
+          >
             Let&apos;s talk <ArrowUpRight size={16} />
           </a>
         </div>
@@ -441,7 +459,9 @@ export default function Home() {
                 <span className="hero-accent">and interfaces they enjoy.</span>
               </h1>
               <p className="hero-intro reveal reveal-3">
-                I&apos;m Subhom, a React and TypeScript engineer in Dublin. I turn complex product requirements into fast, accessible, and thoughtfully crafted digital experiences.
+                I&apos;m Subhom, a React and TypeScript engineer in Dublin. I
+                turn complex product requirements into fast, accessible, and
+                thoughtfully crafted digital experiences.
               </p>
               <div className="hero-actions reveal reveal-4">
                 <a className="button button-primary" href="#work">
@@ -450,7 +470,7 @@ export default function Home() {
                 </a>
                 <a
                   className="button button-secondary"
-                  href="/Subhom_Kundu_Senior_Full_Stack_Engineer.pdf"
+                  href="/Subhom_Senior_Fullstack_Developer_Ltd.pdf"
                   target="_blank"
                 >
                   Read my CV
@@ -510,13 +530,17 @@ export default function Home() {
             <p className="section-kicker">01 · Selected work</p>
             <h2>Products with purpose, built end to end.</h2>
             <p>
-              From product strategy to polished interface and production API, I care about the whole experience.
+              From product strategy to polished interface and production API, I
+              care about the whole experience.
             </p>
           </div>
 
           <div className="projects-grid">
             {projects.map((project) => (
-              <article className={`project-card project-${project.accent}`} key={project.name}>
+              <article
+                className={`project-card project-${project.accent}`}
+                key={project.name}
+              >
                 <div className="project-topline">
                   <span>{project.index}</span>
                   <span>{project.type}</span>
@@ -525,7 +549,10 @@ export default function Home() {
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                 </div>
-                <div className="tag-list" aria-label={`${project.name} technologies`}>
+                <div
+                  className="tag-list"
+                  aria-label={`${project.name} technologies`}
+                >
                   {project.tools.map((tool) => (
                     <span key={tool}>{tool}</span>
                   ))}
@@ -553,7 +580,9 @@ export default function Home() {
               <p className="section-kicker">02 · Open source</p>
               <h2>Shipping into IBM&apos;s Carbon Design System.</h2>
               <p>
-                I contribute beyond the happy path: accessibility semantics, touch-safe interactions, component architecture, tests, Sass, and developer experience across React and Web Components.
+                I contribute beyond the happy path: accessibility semantics,
+                touch-safe interactions, component architecture, tests, Sass,
+                and developer experience across React and Web Components.
               </p>
               <a
                 className="text-link"
@@ -566,7 +595,10 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="carbon-stats" aria-label="Carbon contribution statistics">
+            <div
+              className="carbon-stats"
+              aria-label="Carbon contribution statistics"
+            >
               <div>
                 <strong>{carbonData.stats.authored}</strong>
                 <span>Authored</span>
@@ -594,7 +626,9 @@ export default function Home() {
                   <span className="pr-copy">
                     <strong>{pullRequest.title}</strong>
                     <small>
-                      <span className={`pr-state pr-state-${pullRequest.state}`}>
+                      <span
+                        className={`pr-state pr-state-${pullRequest.state}`}
+                      >
                         {pullRequest.state}
                       </span>
                       {pullRequest.labels.length > 0 && (
@@ -607,7 +641,10 @@ export default function Home() {
                 </a>
               ))}
             </div>
-            <p aria-live="polite" className={`snapshot-note snapshot-${githubStatus}`}>
+            <p
+              aria-live="polite"
+              className={`snapshot-note snapshot-${githubStatus}`}
+            >
               <span aria-hidden="true" className="github-status-dot" />
               {githubStatus === "loading" && "Connecting to GitHub…"}
               {githubStatus === "live" &&
@@ -625,7 +662,8 @@ export default function Home() {
               <h2>Progress measured in outcomes.</h2>
             </div>
             <p>
-              Enterprise discipline, startup pace, and a consistent focus on accessible, reusable engineering.
+              Enterprise discipline, startup pace, and a consistent focus on
+              accessible, reusable engineering.
             </p>
           </div>
 
@@ -660,7 +698,8 @@ export default function Home() {
               <h2>Deep frontend craft. Full-stack range.</h2>
             </div>
             <p>
-              I choose technology for the problem, then create conventions that help teams move with confidence.
+              I choose technology for the problem, then create conventions that
+              help teams move with confidence.
             </p>
           </div>
 
@@ -678,7 +717,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="tool-rail" aria-label="Additional tools and practices">
+          <div
+            className="tool-rail"
+            aria-label="Additional tools and practices"
+          >
             <span>CI/CD</span>
             <span>GitHub Actions</span>
             <span>Docker</span>
@@ -698,19 +740,35 @@ export default function Home() {
           <div className="about-grid">
             <article className="about-card about-main">
               <p className="about-lead">
-                I&apos;m a full-stack engineer who thinks great software should feel clear before it feels clever.
+                I&apos;m a full-stack engineer who thinks great software should
+                feel clear before it feels clever.
               </p>
               <p>
-                Dublin is home, accessibility is part of the definition of done, and collaboration is how the best ideas get sharper. I enjoy translating between product, design, and engineering until everyone can see the same solution.
+                Dublin is home, accessibility is part of the definition of done,
+                and collaboration is how the best ideas get sharper. I enjoy
+                translating between product, design, and engineering until
+                everyone can see the same solution.
               </p>
               <div className="about-links">
-                <a href="https://github.com/Subhom1" rel="noreferrer" target="_blank">
+                <a
+                  href="https://github.com/Subhom1"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   GitHub <ArrowUpRight />
                 </a>
-                <a href="https://linkedin.com/in/subhom" rel="noreferrer" target="_blank">
+                <a
+                  href="https://linkedin.com/in/subhom"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   LinkedIn <ArrowUpRight />
                 </a>
-                <a href="https://www.instagram.com/_subhom_/" rel="noreferrer" target="_blank">
+                <a
+                  href="https://www.instagram.com/_subhom_/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   Instagram · @_subhom_ <ArrowUpRight />
                 </a>
               </div>
@@ -728,7 +786,8 @@ export default function Home() {
                 <span className="mini-label">Current side quest</span>
                 <h3>Fragrance, notes & the stories inside every bottle.</h3>
                 <p>
-                  Perfume is my favourite kind of invisible design: layered, memorable, and deeply personal.
+                  Perfume is my favourite kind of invisible design: layered,
+                  memorable, and deeply personal.
                 </p>
               </div>
             </article>
@@ -755,7 +814,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section contact-section section-border" id="contact">
+        <section
+          className="section contact-section section-border"
+          id="contact"
+        >
           <div className="contact-panel">
             <p className="section-kicker">06 · Start a conversation</p>
             <h2>Have a complex product that should feel simple?</h2>
@@ -777,12 +839,29 @@ export default function Home() {
           <a className="brand-mark" href="#top">
             SK<span>.</span>
           </a>
-          <p>Designed and built with care, curiosity, and an unreasonable attention to spacing.</p>
+          <p>
+            Designed and built with care, curiosity, and an unreasonable
+            attention to spacing.
+          </p>
         </div>
         <div className="footer-links">
-          <a href="https://github.com/Subhom1" rel="noreferrer" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/subhom" rel="noreferrer" target="_blank">LinkedIn</a>
-          <a href="https://www.instagram.com/_subhom_/" rel="noreferrer" target="_blank">Instagram</a>
+          <a href="https://github.com/Subhom1" rel="noreferrer" target="_blank">
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/subhom"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/_subhom_/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Instagram
+          </a>
           <a href="#top">Back to top ↑</a>
         </div>
         <p className="copyright">© {new Date().getFullYear()} Subhom Kundu</p>

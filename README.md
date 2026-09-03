@@ -59,7 +59,7 @@ Responsive QA targets:
 
 ```text
 public/
-├── Subhom_Kundu_Senior_Full_Stack_Engineer.pdf
+├── Subhom_Senior_Fullstack_Developer_Lt.pdf
 └── static/media/profile-pic.png
 src/app/
 ├── fonts/
